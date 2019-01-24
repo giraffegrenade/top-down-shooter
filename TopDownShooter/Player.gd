@@ -24,7 +24,8 @@ func _process(delta):
 		velocity.y = lerp(velocity.y, 0, 0.05)
 
 	
-	position += velocity * delta
+	move_and_slide(velocity)
+	
 	position.x = clamp(position.x, 0, screensize.x)
 	position.y = clamp(position.y, 0, screensize.y)
 	

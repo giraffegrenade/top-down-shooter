@@ -2,7 +2,7 @@
 
 [ext_resource path="res://art/scifitiles-sheet.png" type="Texture" id=1]
 
-[node name="SciFiTiles" type="Node" index="0"]
+[node name="SciFiTiles" type="Node"]
 
 [node name="0" type="Sprite" parent="." index="0"]
 
