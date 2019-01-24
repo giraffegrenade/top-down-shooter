@@ -1,11 +1,19 @@
 extends Area2D
+export (float) var speed
+signal hit
+const BULLET_SPAWN_DIST = 25
 
-#const BULLET_SCENE = preload("res://scenes/bullet.tscn")
+var velocity = Vector2()
 
-func _ready():
-	pass
-	
+func start(pos, mouse_pos):
+	position = pos + (mouse_pos-pos).normalized() * BULLET_SPAWN_DIST
+	velocity = (mouse_pos-pos).normalized() * speed
+
 func _process(delta):
-	var clone = BULLET_SCENE.instance()
-    clone.start(position, grenade_charge, get_global_mouse_position())
-    get_parent().add_child(clone)
+	position += velocity * delta
+
+func _on_Bullet_area_entered(area):
+	pass
+
+func _on_Bullet_body_entered(body):
+	queue_free()
