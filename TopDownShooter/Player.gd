@@ -10,6 +10,8 @@ func _ready():
 	
 func _process(delta):
 	var friction = false
+	
+	look_at(get_global_mouse_position())
 
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = min(velocity.x + acceleration, max_speed)
