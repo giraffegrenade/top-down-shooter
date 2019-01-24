@@ -16,7 +16,7 @@ func _process(delta):
 	
 	if Input.is_mouse_button_pressed(1):
 		var clone = BULLET_SCENE.instance()
-		clone.start(position)
+		clone.start(position, get_global_mouse_position())
 		get_parent().add_child(clone)
 
 	if Input.is_action_pressed("ui_right"):
