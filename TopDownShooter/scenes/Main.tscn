@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tilesets/SciFiTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Naga.tscn" type="PackedScene" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -31,5 +32,9 @@ _sections_unfolded = [ "Cell" ]
 position = Vector2( 164.517, 154.695 )
 acceleration = 50.0
 max_speed = 300
+
+[node name="Naga" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 304, 272 )
 
 

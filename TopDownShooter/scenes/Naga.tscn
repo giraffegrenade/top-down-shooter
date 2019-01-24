@@ -19,14 +19,12 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 32, 32 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 32.3755, 33.0484 )
 rotation = 0.610865
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
