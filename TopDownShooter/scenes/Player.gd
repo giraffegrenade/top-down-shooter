@@ -2,12 +2,19 @@ extends KinematicBody2D
 
 export (float) var acceleration
 export (int) var max_speed
+export (int) var shake_amount = 3
 const BULLET_SCENE = preload("res://scenes/bullet.tscn")
 var screensize  # Size of the game window.
 var velocity = Vector2()
 
 func _ready():
-    screensize = get_viewport_rect().size
+	screensize = get_viewport_rect().size
+	
+func screen_shake():
+	$Camera2D.set_offset(Vector2( \
+		rand_range(-1.0, 1.0) * shake_amount, \
+		rand_range(-1.0, 1.0) * shake_amount \
+	))
 	
 func _process(delta):
 	var friction = false
@@ -15,6 +22,7 @@ func _process(delta):
 	look_at(get_global_mouse_position())
 	
 	if Input.is_mouse_button_pressed(1):
+		screen_shake()
 		var clone = BULLET_SCENE.instance()
 		clone.start(position, get_global_mouse_position())
 		get_parent().add_child(clone)

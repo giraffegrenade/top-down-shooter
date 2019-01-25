@@ -22,6 +22,7 @@ __meta__ = {
 }
 acceleration = null
 max_speed = null
+shake_amount = 3
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
