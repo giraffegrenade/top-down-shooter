@@ -18,7 +18,6 @@ func _physics_process(delta):
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(get_parent().get_node("Player").position, position, [self])
 	var direction
-	print(result.shape)
 	if result.shape == 0:
 		last_player_pos = get_parent().get_node("Player").position
 	direction = (last_player_pos - position).normalized()

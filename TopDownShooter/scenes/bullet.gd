@@ -1,4 +1,5 @@
 extends Area2D
+
 export (float) var speed
 
 const BULLET_SPAWN_DIST = 25
